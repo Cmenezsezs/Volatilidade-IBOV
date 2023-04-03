@@ -15,7 +15,7 @@ ibov = pd.read_csv('ibov.csv', index_col='Data')
 # que possa ser utilizado pelo modelo de previsão.
 ibov_ret = np.log(ibov['Último']/ibov['Último'].shift(1)).dropna()*100
 
-# Divisão dos dados
+# Divisão dos dados. Aqui você poderá optar por escolher um período para análise!
 train = ibov_ret[:'2021-01-01']
 test = ibov_ret['2021-01-01':]
 
